@@ -4,11 +4,11 @@ from bot.logging_config import setup_logger
 
 logger = setup_logger()
 
-def place_order(symbol, side, order_type, quantity, price=None):
-    validate_order_inputs(symbol, side, order_type, quantity, price)
+def place_order(symbol, side, type, quantity, price=None):
+    validate_order_inputs(symbol, side, type, quantity, price)
 
     client = BinanceClient()
-    response = client.place_order(symbol, side, order_type, quantity, price)
+    response = client.place_order(symbol, side, type, quantity, price)
 
     logger.info(
         "Order successful | orderId=%s status=%s executedQty=%s avgPrice=%s",

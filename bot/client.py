@@ -21,25 +21,25 @@ class BinanceClient:
         self.client = Client(api_key, api_secret, testnet=True)
         logger.info("Connected to Binance Futures Testnet")
 
-    def place_order(self, symbol, side, order_type, quantity, price=None):
+    def place_order(self, symbol, side, type, quantity, price=None):
         logger.info(
             "Placing order | symbol=%s side=%s type=%s qty=%s price=%s",
-            symbol, side, order_type, quantity, price
+            symbol, side, type, quantity, price
         )
 
         try:
-            if order_type == "MARKET":
+            if type == "MARKET":
                 response = self.client.futures_create_order(
                     symbol=symbol,
                     side=side,
-                    type=order_type,
+                    type=type,
                     quantity=quantity
                 )
-            elif order_type == "LIMIT":
+            elif type == "LIMIT":
                 response = self.client.futures_create_order(
                     symbol=symbol,
                     side=side,
-                    type=order_type,
+                    type=type,
                     quantity=quantity,
                     price=price,
                     timeInForce="GTC"

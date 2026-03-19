@@ -2,7 +2,7 @@ from bot.logging_config import setup_logger
 
 logger = setup_logger()
 
-def validate_order_inputs(symbol, side, order_type, quantity, price):
+def validate_order_inputs(symbol, side, type, quantity, price):
 
     # 1. symbol must be a non-empty string of uppercase letters only
     if not isinstance(symbol, str) or len(symbol) == 0:
@@ -15,15 +15,15 @@ def validate_order_inputs(symbol, side, order_type, quantity, price):
         raise ValueError(f"Invalid side '{side}': must be 'BUY' or 'SELL'")
 
     # 3. order_type must be MARKET or LIMIT
-    if order_type not in ("MARKET", "LIMIT"):
-        raise ValueError(f"Invalid order_type '{order_type}': must be 'MARKET' or 'LIMIT'")
+    if type not in ("MARKET", "LIMIT"):
+        raise ValueError(f"Invalid order_type '{type}': must be 'MARKET' or 'LIMIT'")
 
     # 4. quantity must be a positive number
     if not isinstance(quantity, (int, float)) or quantity <= 0:
         raise ValueError(f"Invalid quantity '{quantity}': must be a number greater than 0")
 
     # 5. price is required for LIMIT orders and must be positive
-    if order_type == "LIMIT":
+    if type == "LIMIT":
         if price is None:
             raise ValueError("Price is required for LIMIT orders")
         if not isinstance(price, (int, float)) or price <= 0:
@@ -31,5 +31,5 @@ def validate_order_inputs(symbol, side, order_type, quantity, price):
 
     logger.info(
         "Input validation passed | symbol=%s side=%s type=%s qty=%s price=%s",
-        symbol, side, order_type, quantity, price
+        symbol, side, type, quantity, price
     )

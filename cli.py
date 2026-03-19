@@ -23,7 +23,7 @@ def main():
     print("\n--- Order Request ---")
     print(f"  Symbol     : {args.symbol}")
     print(f"  Side       : {args.side}")
-    print(f"  Order Type : {args.order_type}")
+    print(f"  Order Type : {args.type}")
     print(f"  Quantity   : {args.quantity}")
     print(f"  Price      : {args.price if args.price else 'N/A (MARKET order)'}")
     print("---------------------\n")
@@ -32,7 +32,7 @@ def main():
         result = place_order(
             symbol=args.symbol,
             side=args.side,
-            order_type=args.order_type,
+            type=args.type,
             quantity=args.quantity,
             price=args.price
         )
