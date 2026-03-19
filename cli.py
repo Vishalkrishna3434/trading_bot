@@ -9,7 +9,7 @@ def parse_args():
 
     parser.add_argument("--symbol",     required=True,  help="Trading pair e.g. BTCUSDT")
     parser.add_argument("--side",       required=True,  choices=["BUY", "SELL"], help="BUY or SELL")
-    parser.add_argument("--order_type", required=True,  choices=["MARKET", "LIMIT"], help="MARKET or LIMIT")
+    parser.add_argument("--type", required=True,  choices=["MARKET", "LIMIT"], help="MARKET or LIMIT")
     parser.add_argument("--quantity",   required=True,  type=float, help="Order quantity e.g. 0.01")
     parser.add_argument("--price",      required=False, type=float, help="Price (required for LIMIT orders)")
 
