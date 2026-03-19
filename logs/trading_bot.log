@@ -1,0 +1,10 @@
+2026-03-19 19:03:26,368 | INFO | Input validation passed | symbol=BTCUSDT side=BUY type=MARKET qty=0.01 price=None
+2026-03-19 19:03:27,179 | INFO | Connected to Binance Futures Testnet
+2026-03-19 19:03:27,179 | INFO | Placing order | symbol=BTCUSDT side=BUY type=MARKET qty=0.01 price=None
+2026-03-19 19:03:27,993 | INFO | Order placed | orderId=12879950416 status=NEW
+2026-03-19 19:03:27,994 | INFO | Order successful | orderId=12879950416 status=NEW executedQty=0.000 avgPrice=0.00
+2026-03-19 19:04:02,949 | INFO | Input validation passed | symbol=BTCUSDT side=BUY type=LIMIT qty=0.01 price=42000.0
+2026-03-19 19:04:03,524 | INFO | Connected to Binance Futures Testnet
+2026-03-19 19:04:03,525 | INFO | Placing order | symbol=BTCUSDT side=BUY type=LIMIT qty=0.01 price=42000.0
+2026-03-19 19:04:03,939 | INFO | Order placed | orderId=12879958013 status=NEW
+2026-03-19 19:04:03,940 | INFO | Order successful | orderId=12879958013 status=NEW executedQty=0.000 avgPrice=0.00
