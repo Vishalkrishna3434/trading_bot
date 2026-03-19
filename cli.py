@@ -44,18 +44,18 @@ def main():
         print(f"  Executed Qty : {result.get('executedQty')}")
         print(f"  Avg Price    : {result.get('avgPrice')}")
         print("----------------------")
-        print("✅ Order placed successfully!\n")
+        print("Order placed successfully!\n")
 
     except ValueError as e:
-        print(f"\n❌ Validation error: {e}\n")
+        print(f"\n Validation error: {e}\n")
         logger.error("Validation error | %s", e)
 
     except EnvironmentError as e:
-        print(f"\n❌ Environment error: {e}\n")
+        print(f"\n Environment error: {e}\n")
         logger.error("Environment error | %s", e)
 
     except Exception as e:
-        print(f"\n❌ Order failed: {e}\n")
+        print(f"\n Order failed: {e}\n")
         logger.error("Unexpected error | %s", e)
 
 
